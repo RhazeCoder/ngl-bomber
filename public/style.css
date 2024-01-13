@@ -1,0 +1,115 @@
+html {
+  background: #EC1187 linear-gradient(to bottom right, #EC1187 0%, #FF8D10 100%);
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+body {
+  font: 14px "Avenir Next", Helvetica, Arial, sans-serif;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+main {
+  padding: 15px;
+  width: 100%;
+  height: 100%;
+  max-width: 500px;
+}
+
+#total-sent-container {
+  display: flex;
+  justify-content: right;
+}
+
+#total-sent-container p {
+  color: white;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+#container-header {
+  padding:16px 16px 12px;
+  font-size:14px;
+  background-color: white;
+  border-radius: 32px 32px 0 0;
+  display: flex;
+  align-items: top;
+  justify-content: left;
+}
+
+#message-container {
+  width:100%;
+  margin-bottom:10px;
+  background-color:rgba(255,255,255,0.4);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(6px);
+  border-radius: 0 0 24px 24px;
+  position: relative;
+  -webkit-appearance: none;
+}
+
+#message {
+  width: 100%;
+  padding: 18px 24px;
+  height: 140px;
+  box-sizing: border-box;
+  font-size: 20px;
+  font-weight: 600;
+  border: none;
+  outline: none;
+  background-color: transparent;
+}
+
+#response {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  font-weight: 600;
+  font-size: 16px;
+  row: 1;
+  width: 100%;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#username {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  font-weight: 600;
+  font-size: 14px;
+  row: 1;
+  width: 100%;
+}
+
+textarea::placeholder {
+    color: rgba(0,0,0,0.25);  
+}
+
+button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  background-color: black;
+  border-radius: 100px;
+  border: none;
+  font-size: 18px;
+  font-weight: 700;
+  color:white;
+  text-decoration: none;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.25);
+  height: 60px;
+  box-sizing: border-box;
+  cursor: pointer;
+}
