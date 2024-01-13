@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     sendButton.disabled = true;
-    sendButton.textContent = 'Spamming in Progress';
+    sendButton.textContent = 'Spamming in Progress.';
     usernameInput.setAttribute('readonly', true);
     messageInput.setAttribute('readonly', true);
 
@@ -39,14 +39,9 @@ document.addEventListener('DOMContentLoaded', () => {
             throw new Error(response.status);
           }
         } catch (err) {
-          clearInterval(spamInterval);
-          spamInterval = null;
-          sendButton.disabled = false;
-          sendButton.textContent = 'Spam Now!';
-          usernameInput.removeAttribute('readonly');
-          messageInput.removeAttribute('readonly');
+          const data = await callSpam();
         } 
-      }, 2100); 
+      }, 500); 
     }
   });
 
