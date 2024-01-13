@@ -77,12 +77,7 @@ app.post('/api/start', async (req, res) => {
         break;
     }
   } catch (error) {
-    if (error.response.data.startsWith("<")) {
-      res.status(200).json({ update: total, status: "Retrying..." });
-    } else {
-      console.error('Error:', error.response.data);
-      res.status(200).json({ update: total, status: error.response.data });
-    }
+    res.status(200).json({ update: total, status: "Retrying..." });
   }
 });
 
