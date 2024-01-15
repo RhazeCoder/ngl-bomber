@@ -67,7 +67,7 @@ app.post('/api/send', async (req, res) => {
 
     switch (statusCode) {
       case 200:
-        res.json({ update: updatedTotal, status: "Sent Success" });
+        res.json({ status: "Sent Success" });
         break;
       case 400:
         console.log('Bad Request: 400');
@@ -83,7 +83,7 @@ app.post('/api/send', async (req, res) => {
         break;
     }
   } catch (error) {
-    res.status(200).json({ , status: "Retrying..." });
+    res.status(200).json({status: "Retrying..." });
   }
 });
 
