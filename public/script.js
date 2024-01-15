@@ -57,8 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
       },
       body: JSON.stringify({
         username: usernameInput.value,
-        message: messageInput.value,
-        total: totalSent.textContent
+        message: messageInput.value
       })
     };
 
