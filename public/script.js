@@ -32,7 +32,9 @@ document.addEventListener('DOMContentLoaded', () => {
       spamInterval = setInterval(async function spamFunction() {
         try {
           const data = await callSpam();
-          total_sent++;
+          if (data.status == "Sent Success") {
+            total_sent++;
+          }
           totalSent.textContent = total_sent;
           responseText.textContent = data.status;
 
