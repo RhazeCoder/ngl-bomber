@@ -33,7 +33,6 @@ app.post('/api/send', async (req, res) => {
     return deviceId;
   }
 
-
   function randIP() {
     let ip = [];
     for (let i = 0; i < 4; i++) {
@@ -68,17 +67,15 @@ app.post('/api/send', async (req, res) => {
 
     switch (statusCode) {
       case 200:
-        const p_total = parseInt(total);
-        const updatedTotal = p_total + 1;
         res.json({ update: updatedTotal, status: "Sent Success" });
         break;
       case 400:
         console.log('Bad Request: 400');
-        res.status(400).json({ update: total, status: "Bad request" });
+        res.status(400).json({ status: "Bad request" });
         break;
       case 404:
         console.log('Not Found: 404');
-        res.status(404).json({ update: total, status: "User not found" });
+        res.status(404).json({ status: "User not found" });
         break;
       default:
         console.log('Unhandled status code:', statusCode);
@@ -86,7 +83,7 @@ app.post('/api/send', async (req, res) => {
         break;
     }
   } catch (error) {
-    res.status(200).json({ update: total, status: "Retrying..." });
+    res.status(200).json({ , status: "Retrying..." });
   }
 });
 
