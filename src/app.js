@@ -32,6 +32,16 @@ app.post('/api/send', async (req, res) => {
   
     return deviceId;
   }
+
+
+  function randIP() {
+    let ip = [];
+    for (let i = 0; i < 4; i++) {
+      ip.push(Math.floor(Math.random() * 255));
+    }
+
+    return ip.join('.');
+  }
   
   const usern = req.body.username;
   const message = req.body.message;
@@ -41,7 +51,8 @@ app.post('/api/send', async (req, res) => {
 
   const url = 'https://ngl.link/api/submit';
   const headers = {
-    'Content-Type': 'application/x-www-form-urlencoded'
+    'Content-Type': 'application/x-www-form-urlencoded',
+    'x-forwarded-for': randIP(),
   };
 
   const data = {
