@@ -62,7 +62,7 @@ document.addEventListener('DOMContentLoaded', () => {
       })
     };
 
-    const response = await fetch('/api/start', requestOptions);
+    const response = await fetch('/api/send', requestOptions);
 
     if (!response.ok) {
       if (response.status === 500) {
