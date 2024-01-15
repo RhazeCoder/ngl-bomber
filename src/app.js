@@ -50,8 +50,7 @@ app.post('/api/send', async (req, res) => {
 
   const url = 'https://ngl.link/api/submit';
   const headers = {
-    'Content-Type': 'application/x-www-form-urlencoded',
-    'x-forwarded-for': randIP(),
+    'Content-Type': 'application/x-www-form-urlencoded'
   };
 
   const data = {
