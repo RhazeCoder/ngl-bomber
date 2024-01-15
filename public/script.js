@@ -6,6 +6,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const responseText = document.getElementById('response');
   let spamInterval;
 
+  let sentTotal = totalSent.innerHTML;
+  let total_sent = parseInt(sentTotal);
+
   sendButton.addEventListener('click', async () => {
     const usernameValue = usernameInput.value;
     const messageValue = messageInput.value;
@@ -29,7 +32,8 @@ document.addEventListener('DOMContentLoaded', () => {
       spamInterval = setInterval(async function spamFunction() {
         try {
           const data = await callSpam();
-          totalSent.textContent = data.update;
+          total_sent++;
+          totalSent.textContent = total_sent;
           responseText.textContent = data.status;
 
           if (data.status !== 'Sent Success' ) {
