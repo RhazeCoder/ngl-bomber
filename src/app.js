@@ -7,13 +7,11 @@ const fs = require("fs");
 const axios = require("axios");
 
 app.use(express.json());
-app.use(express.static(path.join(__dirname, "public")));
+app.use(express.static("public"));
 
 app.get('/', async (req, res) => {
-  
   try {
-    
-    const html = await fs.readFile(path.join(__dirname, "public", "index.html"), "utf-8");
+    const html = await fs.promises.readFile(path.join(("public", "index.html"), "utf-8"));
     res.send(html);
   } catch (error) {
     console.error("Error serving index.html file:", error);
@@ -21,7 +19,7 @@ app.get('/', async (req, res) => {
   }
 });
 
-app.post('/api/start', async (req, res) => {
+app.post('/api/send', async (req, res) => {
   function generateDeviceId() {
     const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
     const length = 10;
@@ -55,7 +53,7 @@ app.post('/api/start', async (req, res) => {
   try {
     const response = await axios.post(url, data, { headers });
     const statusCode = response.status;
-    console.log(`${statusCode}[${username}][${message}][${deviceId}]`);
+    console.log(`${statusCode}[${username}][${message}]`);
 
     switch (statusCode) {
       case 200:
@@ -81,6 +79,8 @@ app.post('/api/start', async (req, res) => {
   }
 });
 
+// listen for requests :)
 app.listen(port, () => {
   console.log("Listening on port:", port);
+  console.log("Access the app browser\nhttp://localhost:3000");
 });
