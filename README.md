@@ -1,3 +1,7 @@
+<h1>NGL Bomber</h1>
+
+![Preview](./images/interface.png)
+
 ### Introduction
 ------------
  - This project enables the spamming of messages within NGL from a browser-based interface.
