@@ -1,7 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 
-async function display() {
+async function display(req, res) {
     try {
         const html = await fs.promises.readFile(path.join("public", "index.html"), "utf-8");
         res.send(html);

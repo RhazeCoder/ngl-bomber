@@ -2,12 +2,16 @@ document.addEventListener('DOMContentLoaded', () => {
   const usernameInput = document.getElementById('username');
   const messageInput = document.getElementById('message');
   const totalSent = document.getElementById('total-sent');
+  const totalReq = document.getElementById('total-req');
   const sendButton = document.getElementById('send-button');
   const responseText = document.getElementById('response');
   let spamInterval;
 
   let sentTotal = totalSent.innerHTML;
   let total_sent = parseInt(sentTotal);
+
+  let reqTotal = totalReq.innerHTML;
+  let req_sent = parseInt(reqTotal);
 
   sendButton.addEventListener('click', async () => {
     const usernameValue = usernameInput.value;
@@ -52,6 +56,9 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   async function callSpam() {
+    req_sent++;
+    totalReq.textContent = req_sent;
+
     const requestOptions = {
       method: 'POST',
       headers: {
