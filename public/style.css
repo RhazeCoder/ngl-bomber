@@ -113,3 +113,16 @@ button {
   box-sizing: border-box;
   cursor: pointer;
 }
+
+#creator {
+  font-size: 12px;
+  color: white;
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+a {
+  color: black;
+}
