@@ -2,15 +2,25 @@
   "name": "ngl-bomber",
   "version": "1.0.0",
   "description": "Ngl bomber made using nodejs and ngl api.",
-  "main": "src/app.js",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node src/app.js"
+    "start": "node app.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/RhazeCoder/ngl-bomber.git"
   },
+  "type": "module",
+  "keywords": [
+    "ngl",
+    "ngl-bomber",
+    "ngl bomber",
+    "ngl-spam",
+    "ngl spam",
+    "ngl spammer",
+    "ngl-spammer"
+  ],
   "author": "RhazeCoder",
   "license": "ISC",
   "bugs": {
