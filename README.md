@@ -1,6 +1,6 @@
 <h1>NGL Bomber</h1>
 
-[ProjectOutput](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git "Project Output")
+[Project Preview](https://ngl-bomber.justineagcanas.live/ "Project Preview")
 
 ![Preview](./images/preview.png)
 
