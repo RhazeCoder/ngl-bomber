@@ -1,6 +1,8 @@
 <h1>NGL Bomber</h1>
 
-![Preview](./images/interface.png)
+[ProjectOutput](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git "Project Output")
+
+![Preview](./images/preview.png)
 
 ### Introduction
 ------------
@@ -9,7 +11,7 @@
 ### Requirements
 ------------
 To deploy locally you need to install the following
-1.  [git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git "git")
+1. [git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git "git")
 2. [node](https://nodejs.org/en "node")
 
 ### Installation

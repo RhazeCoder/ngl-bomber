@@ -36,18 +36,8 @@ document.addEventListener('DOMContentLoaded', () => {
       spamInterval = setInterval(async function spamFunction() {
         try {
           const data = await callSpam();
-          if (data.status == "Sent Success") {
-            total_sent++;
-          }
-          totalSent.textContent = total_sent;
+          totalSent.textContent = (data.status == "Sent Success" ? ++total_sent : total_sent);
           responseText.textContent = data.status;
-
-          if (data.status !== 'Sent Success' ) {
-            if (data.status.includes("head")) {
-              throw new Error('Error has occurred: Click Spam Now! again');
-            }
-            throw new Error(response.status);
-          }
         } catch (err) {
           const data = await callSpam();
         } 

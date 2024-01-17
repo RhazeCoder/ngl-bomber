@@ -6,9 +6,8 @@ async function send(req, res) {
   let ipadd = await ip();
   let deviceId = await deviceid();
   
-  const usern = req.body.username;
   const message = req.body.message;
-  const username = usern.toLowerCase();
+  const username = req.body.username.toLowerCase();
 
   const url = 'https://ngl.link/api/submit';
   const headers = {
