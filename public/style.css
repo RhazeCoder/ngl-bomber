@@ -65,6 +65,7 @@ main {
   font-weight: 600;
   border: none;
   outline: none;
+  resize: none;
   background-color: transparent;
 }
 
@@ -88,7 +89,7 @@ main {
   background-color: transparent;
   font-weight: 600;
   font-size: 14px;
-  row: 1;
+  resize: none;
   width: 100%;
 }
 
