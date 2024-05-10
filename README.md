@@ -6,7 +6,7 @@
 
 ### Introduction
 ------------
- - This project enables the spamming of messages within NGL from a browser-based interface.
+ - This project enables the spamming of messages for the NGL user from a browser-based interface.
 
 ### Requirements
 ------------
