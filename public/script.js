@@ -3,15 +3,35 @@ document.addEventListener('DOMContentLoaded', () => {
   const messageInput = document.getElementById('message');
   const totalSent = document.getElementById('total-sent');
   const totalReq = document.getElementById('total-req');
+  const randomButton = document.getElementById('random');
   const sendButton = document.getElementById('send-button');
   const responseText = document.getElementById('response');
   let spamInterval;
+  let isRandom = false;
 
   let sentTotal = totalSent.innerHTML;
   let total_sent = parseInt(sentTotal);
 
   let reqTotal = totalReq.innerHTML;
   let req_sent = parseInt(reqTotal);
+
+  async function randomMessage() {
+    const messages = await fetch('./messages.json');
+    const data = await messages.json();
+    messageInput.value = data[Math.floor(Math.random() * data.length)];
+  }
+
+  randomButton.addEventListener('click', () => {
+    if (isRandom) {
+      randomButton.style.background = "rgba(255, 255, 255, 0.3)";
+      isRandom = false;
+      return;
+    } else {
+      randomButton.style.background = "rgba(11, 156, 49, 0.5)";
+      isRandom = true;
+      randomMessage();
+    }
+  });
 
   sendButton.addEventListener('click', async () => {
     const usernameValue = usernameInput.value;
@@ -48,6 +68,9 @@ document.addEventListener('DOMContentLoaded', () => {
   async function callSpam() {
     req_sent++;
     totalReq.textContent = req_sent;
+    if (isRandom) {
+      randomMessage();
+    }
 
     const requestOptions = {
       method: 'POST',

@@ -127,3 +127,18 @@ button {
 a {
   color: black;
 }
+
+.random {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  bottom: 20px;
+  right: 25px;
+  font-size: 12px;
+  background: rgba(255, 255, 255, 0.3);
+  padding: 3px;
+  border-radius: 50%;
+}
