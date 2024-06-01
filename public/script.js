@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
+  let rand_data = "";
   const usernameInput = document.getElementById('username');
   const messageInput = document.getElementById('message');
   const totalSent = document.getElementById('total-sent');
@@ -16,12 +17,11 @@ document.addEventListener('DOMContentLoaded', () => {
   let req_sent = parseInt(reqTotal);
 
   async function randomMessage() {
-    let data;
-    if (data == "") {
+    if (rand_data == "") {
       const messages = await fetch('./messages.json');
-      data = await messages.json();
+      rand_data = await messages.json();
     }
-    messageInput.value = data[Math.floor(Math.random() * data.length)];
+    messageInput.value = rand_data[Math.floor(Math.random() * rand_data.length)];
   }
 
   randomButton.addEventListener('click', () => {
