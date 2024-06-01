@@ -16,8 +16,11 @@ document.addEventListener('DOMContentLoaded', () => {
   let req_sent = parseInt(reqTotal);
 
   async function randomMessage() {
-    const messages = await fetch('./messages.json');
-    const data = await messages.json();
+    let data;
+    if (data == "") {
+      const messages = await fetch('./messages.json');
+      data = await messages.json();
+    }
     messageInput.value = data[Math.floor(Math.random() * data.length)];
   }
 
